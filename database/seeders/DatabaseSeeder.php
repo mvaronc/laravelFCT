@@ -36,6 +36,9 @@ class DatabaseSeeder extends Seeder
         // El profesor manolillo tiene el rol teacher en la empresa1
         $user = User::where('name', 'manolillo')->first();
         $user->rols()->attach(2, ['company_id' => 1]);
+        // El administrador admin tiene el rol admin sin empresa
+        $user = User::where('name', 'admin')->first();
+        $user->rols()->attach(1, ['company_id' => null]);
 
 
     }
